@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خبرنیوز پرو — پاکستان کا نمبر ون نیوز پورٹل</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Bebas+Neue&family=Cinzel:wght@700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <span style="font-size:12px; color:#c8960c;">🇵🇰 پاکستان کا نمبر ون اردو نیوز پورٹل</span>
+  <div class="utility-right">
+    <a>ہمارے بارے میں</a><span class="util-sep">|</span>
+    <a>رابطہ</a><span class="util-sep">|</span>
+    <a>نیوز لیٹر</a><span class="util-sep">|</span>
+    <a>📱 ایپ ڈاؤن لوڈ</a>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">🔴 بریکنگ</div>
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item">وزیر اعظم نے نئی اقتصادی پالیسی کا اعلان کر دیا — مہنگائی میں فوری کمی کا وعدہ</span>
+    <span class="ticker-item">پاکستان کرکٹ ٹیم نے سیریز جیت لی — بابر اعظم کی تاریخی سنچری</span>
+    <span class="ticker-item">لاہور میٹرو کے نئے روٹ کا افتتاح — 3 لاکھ مسافروں کو فائدہ</span>
+    <span class="ticker-item">پاکستان میں 5G کا آغاز — سب سے پہلے کراچی، لاہور اور اسلام آباد میں</span>
+    <span class="ticker-item">سونے کی قیمت میں تاریخی اضافہ — فی تولہ 3 لاکھ 20 ہزار</span>
+    <span class="ticker-item">اسٹاک مارکیٹ 75,000 پوائنٹ کی حد عبور — سرمایہ کار خوش</span>
+    <span class="ticker-item">وزیر اعظم نے نئی اقتصادی پالیسی کا اعلان کر دیا — مہنگائی میں فوری کمی کا وعدہ</span>
+    <span class="ticker-item">پاکستان کرکٹ ٹیم نے سیریز جیت لی — بابر اعظم کی تاریخی سنچری</span>
+    <span class="ticker-item">لاہور میٹرو کے نئے روٹ کا افتتاح — 3 لاکھ مسافروں کو فائدہ</span>
+    <span class="ticker-item">پاکستان میں 5G کا آغاز — سب سے پہلے کراچی، لاہور اور اسلام آباد میں</span>
+    <span class="ticker-item">سونے کی قیمت میں تاریخی اضافہ — فی تولہ 3 لاکھ 20 ہزار</span>
+    <span class="ticker-item">اسٹاک مارکیٹ 75,000 پوائنٹ کی حد عبور — سرمایہ کار خوش</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-wrap" onclick="showPage('home')" style="cursor:pointer;">
+      <div class="logo-icon"><span>خ</span></div>
+      <div>
+        <div class="logo-text">خبر<em>نیوز</em></div>
+        <div class="logo-sub">PAKISTAN'S #1 URDU NEWS</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a class="nav-link active" onclick="showPage('home')">ہوم</a>
+      <a class="nav-link" onclick="showPage('categories')">پاکستان</a>
+      <a class="nav-link" onclick="showPage('categories')">دنیا</a>
+      <a class="nav-link" onclick="showPage('categories')">سیاست</a>
+      <a class="nav-link" onclick="showPage('categories')">کاروبار</a>
+      <a class="nav-link" onclick="showPage('categories')">کھیل</a>
+      <a class="nav-link" onclick="showPage('categories')">ٹیکنالوجی</a>
+      <a class="nav-link" onclick="showPage('categories')">صحت</a>
+      <a class="nav-link" onclick="showPage('categories')">تفریح</a>
+      <a class="nav-link" onclick="showPage('categories')">رائے</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-toggle" onclick="toggleSearch()" title="تلاش">🔍</div>
+      <div class="dark-toggle" id="themeBtn" onclick="toggleTheme()" title="ڈارک موڈ">🌙</div>
+      <div class="live-badge" onclick="showPage('article')">
+        <div class="live-dot"></div> لائیو
+      </div>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="search-input-wrap">
+      <span style="font-size:18px;">🔍</span>
+      <input type="text" placeholder="خبر یا موضوع تلاش کریں..." id="searchInput">
+      <span class="search-close" onclick="toggleSearch()">✕</span>
+    </div>
+  </div>
+</header>
+
+<!-- ████████████████ HOME PAGE ████████████████ -->
+<div id="page-home" class="page active">
+<div class="home-wrap">
+
+  <!-- HERO MEGA GRID -->
+  <div class="hero-mega">
+    <div class="hero-feature" onclick="showPage('article')">
+      <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&q=85" alt="">
+      <div class="hero-feature-overlay">
+        <div class="tag-breaking"><div class="dot"></div> بریکنگ نیوز</div>
+        <h1>وزیر اعظم نے تاریخی قومی اقتصادی پالیسی 2026 کا اعلان کر دیا — آئندہ دو سال میں بیس لاکھ روزگار</h1>
+        <p>وزیر اعظم نے قومی اقتصادی کانفرنس سے خطاب کرتے ہوئے جامع معاشی منصوبے کا اعلان کیا جس میں بنیادی اشیاء پر سبسڈی، توانائی میں سستا نرخ اور نوجوانوں کے لیے روزگار شامل ہیں</p>
+        <div class="hero-meta">
+          <span>احمد خان</span><span class="sep">•</span>
+          <span>16 مارچ 2026</span><span class="sep">•</span>
+          <span>8 منٹ مطالعہ</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-sub" onclick="showPage('article')">
+      <img src="https://images.unsplash.com/photo-1540747913346-19212a4b423d?w=600&q=80" alt="">
+      <div class="hero-sub-overlay">
+        <div class="pill pill-o">کھیل</div>
+        <h3>بابر اعظم کی سنچری — پاکستان نے سیریز جیت لی</h3>
+      </div>
+    </div>
+    <div class="hero-sub" onclick="showPage('article')">
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80" alt="">
+      <div class="hero-sub-overlay">
+        <div class="pill pill-g">مارکیٹ</div>
+        <h3>اسٹاک مارکیٹ 75,000 پوائنٹ کی حد عبور — تاریخی اضافہ</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-card">
+      <div class="stat-icon">🌡️</div>
+      <div>
+        <div class="stat-label">لاہور</div>
+        <div class="stat-value">24°C</div>
+        <div class="stat-change" style="color:#888; font-family:'IBM Plex Mono'; font-size:10px;">☀️ صاف موسم</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💵</div>
+      <div>
+        <div class="stat-label">ڈالر</div>
+        <div class="stat-value">277.50</div>
+        <div class="stat-change neg">▼ 2.30</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📈</div>
+      <div>
+        <div class="stat-label">KSE-100</div>
+        <div class="stat-value">75,240</div>
+        <div class="stat-change pos">▲ 1,420</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🥇</div>
+      <div>
+        <div class="stat-label">سونا (تولہ)</div>
+        <div class="stat-value">3,20,000</div>
+        <div class="stat-change pos">▲ 4,500</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⛽</div>
+      <div>
+        <div class="stat-label">پیٹرول</div>
+        <div class="stat-value">272.89</div>
+        <div class="stat-change neg">▼ 1.50</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LATEST NEWS -->
+  <div class="sec-head">
+    <h2><span class="line"></span> تازہ خبریں</h2>
+    <a class="sec-more">مزید دیکھیں →</a>
+  </div>
+  <div class="news-grid-4" style="margin-bottom:40px;">
+    <div class="ncard" onclick="showPage('article')">
+      <div class="ncard-img-wrap">
+        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="">
+        <div class="ncard-time-badge">1 گھنٹہ قبل</div>
+      </div>
+      <div class="ncard-body">
+        <div class="pill pill-r" style="margin-bottom:8px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">پاکستان</div>
+        <h3>لاہور میٹرو کے نئے گرین لائن روٹ کا افتتاح — 3 لاکھ مسافروں کو سہولت</h3>
+        <p>شہر کے مضافاتی علاقوں کو مرکز سے جوڑنے والی اس لائن پر 24 اسٹیشن قائم کیے گئے ہیں</p>
+      </div>
+      <div class="ncard-footer">
+        <span>احمد رضا</span>
+        <div class="ncard-actions">
+          <span class="ncard-action">👁 12k</span>
+          <span class="ncard-action">💬 234</span>
+          <span class="ncard-action">🔗</span>
+        </div>
+      </div>
+    </div>
+    <div class="ncard" onclick="showPage('article')">
+      <div class="ncard-img-wrap">
+        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=500&q=80" alt="">
+        <div class="ncard-time-badge">3 گھنٹے قبل</div>
+      </div>
+      <div class="ncard-body">
+        <div class="pill pill-p" style="margin-bottom:8px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">ٹیک</div>
+        <h3>پاکستان میں 5G کا باضابطہ آغاز — کراچی، لاہور، اسلام آباد پہلے مرحلے میں</h3>
+        <p>5G نیٹ ورک سے انٹرنیٹ کی رفتار 100 گنا تیز ہو جائے گی اور نئی صنعتیں پیدا ہوں گی</p>
+      </div>
+      <div class="ncard-footer">
+        <span>ثناء ملک</span>
+        <div class="ncard-actions">
+          <span class="ncard-action">👁 18k</span>
+          <span class="ncard-action">💬 512</span>
+          <span class="ncard-action">🔗</span>
+        </div>
+      </div>
+    </div>
+    <div class="ncard" onclick="showPage('article')">
+      <div class="ncard-img-wrap">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt="">
+        <div class="ncard-time-badge">5 گھنٹے قبل</div>
+      </div>
+      <div class="ncard-body">
+        <div class="pill pill-b" style="margin-bottom:8px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">صحت</div>
+        <h3>ڈینگی ویکسین کامیاب تجربے کے بعد عوام کے لیے دستیاب ہو گی</h3>
+        <p>نیشنل انسٹیٹیوٹ آف ہیلتھ کی تاریخی کامیابی — اگلے تین ماہ میں مارکیٹ میں آئے گی</p>
+      </div>
+      <div class="ncard-footer">
+        <span>ڈاکٹر عائشہ</span>
+        <div class="ncard-actions">
+          <span class="ncard-action">👁 9k</span>
+          <span class="ncard-action">💬 180</span>
+          <span class="ncard-action">🔗</span>
+        </div>
+      </div>
+    </div>
+    <div class="ncard" onclick="showPage('article')">
+      <div class="ncard-img-wrap">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&q=80" alt="">
+        <div class="ncard-time-badge">6 گھنٹے قبل</div>
+      </div>
+      <div class="ncard-body">
+        <div class="pill pill-gold" style="margin-bottom:8px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">تعلیم</div>
+        <h3>پاکستان میں اعلیٰ تعلیم کا بجٹ دوگنا — 500 نئی یونیورسٹی سیٹیں</h3>
+        <p>HEC نے اعلان کیا کہ وفاقی بجٹ میں تعلیمی مد میں 300 ارب روپے مختص کیے جائیں گے</p>
+      </div>
+      <div class="ncard-footer">
+        <span>فرحان احمد</span>
+        <div class="ncard-actions">
+          <span class="ncard-action">👁 7k</span>
+          <span class="ncard-action">💬 95</span>
+          <span class="ncard-action">🔗</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED + LIVE -->
+  <div class="home-main-sidebar">
+    <div>
+      <!-- FEATURED -->
+      <div class="sec-head">
+        <h2><span class="line"></span> خصوصی رپورٹیں</h2>
+        <a class="sec-more">تمام رپورٹیں →</a>
+      </div>
+      <div class="featured-split" style="margin-bottom:40px;">
+        <div class="feat-main" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=900&q=85" alt="">
+          <div class="feat-overlay">
+            <div class="pill pill-r" style="margin-bottom:10px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">گہرائی سے تجزیہ</div>
+            <h2>پاکستان کا پانی کا بحران — 2035 تک سنگین صورتحال کا خدشہ</h2>
+            <p>ماہرین آبیات کا کہنا ہے کہ اگر ابھی سے ٹھوس اقدامات نہ کیے گئے تو آنے والی نسلیں شدید پانی کی کمی کا شکار ہوں گی</p>
+          </div>
+        </div>
+        <div class="feat-list">
+          <div class="feat-list-item" onclick="showPage('article')">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=200&q=80" alt="">
+            <div><div class="pill pill-o" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">تعلیم</div><h4>پنجاب میں سرکاری اسکولوں کا نیا نظام — 5 لاکھ نئی نشستیں</h4><p class="meta">8 گھنٹے قبل</p></div>
+          </div>
+          <div class="feat-list-item" onclick="showPage('article')">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=200&q=80" alt="">
+            <div><div class="pill pill-g" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">ماحولیات</div><h4>کراچی کے ساحل سے آلودگی ختم کرنے کا منصوبہ شروع</h4><p class="meta">10 گھنٹے قبل</p></div>
+          </div>
+          <div class="feat-list-item" onclick="showPage('article')">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=200&q=80" alt="">
+            <div><div class="pill pill-b" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">سیاحت</div><h4>گلگت بلتستان میں سیاحوں کی ریکارڈ آمد — 2 لاکھ سے تجاوز</h4><p class="meta">12 گھنٹے قبل</p></div>
+          </div>
+          <div class="feat-list-item" onclick="showPage('article')">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&q=80" alt="">
+            <div><div class="pill pill-p" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">اسٹارٹ اپ</div><h4>پاکستانی فنٹیک اسٹارٹ اپ نے 20 ملین ڈالر کی فنڈنگ حاصل کی</h4><p class="meta">14 گھنٹے قبل</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO SECTION -->
+      <div class="sec-head">
+        <h2><span class="line"></span> ویڈیو رپورٹیں</h2>
+        <a class="sec-more">تمام ویڈیوز →</a>
+      </div>
+      <div class="video-grid" style="margin-bottom:40px;">
+        <div class="video-card" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1555849963-ff9fe0c870eb?w=700&q=80" alt="">
+          <div class="video-duration">10:24</div>
+          <div class="play-btn">▶</div>
+          <div class="video-overlay">
+            <div class="pill pill-r" style="margin-bottom:8px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">خصوصی</div>
+            <h3>وزیر اعظم کا مکمل خطاب — قومی اقتصادی کانفرنس 2026</h3>
+          </div>
+        </div>
+        <div class="video-card" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1540747913346-19212a4b423d?w=400&q=80" alt="">
+          <div class="video-duration">5:12</div>
+          <div class="play-btn">▶</div>
+          <div class="video-overlay">
+            <h3 class="sm">بابر اعظم کی یادگار سنچری کی ہائی لائٹس</h3>
+          </div>
+        </div>
+        <div class="video-card" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="">
+          <div class="video-duration">7:45</div>
+          <div class="play-btn">▶</div>
+          <div class="video-overlay">
+            <h3 class="sm">لاہور میٹرو — افتتاحی تقریب کی جھلکیاں</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPINION -->
+      <div class="sec-head">
+        <h2><span class="line"></span> رائے و تجزیہ</h2>
+        <a class="sec-more">تمام کالم →</a>
+      </div>
+      <div class="opinion-grid" style="margin-bottom:40px;">
+        <div class="op-card" onclick="showPage('article')">
+          <div class="op-card-top">
+            <div class="op-author-row">
+              <div class="op-avatar" style="background:linear-gradient(135deg,#d10000,#ff6b00);">اح</div>
+              <div><div class="op-name">احمد حسین خان</div><div class="op-role">سینئر تجزیہ نگار</div></div>
+            </div>
+            <div class="op-title">پاکستان کی معیشت: مشکل سفر، روشن منزل</div>
+          </div>
+          <div class="op-card-body"><p>حالیہ اقتصادی اعداد و شمار بتاتے ہیں کہ ہم صحیح سمت میں بڑھ رہے ہیں، مگر آگے کا راستہ آسان نہیں۔ اصل چیلنج پالیسیوں پر عملدرآمد ہے...</p></div>
+          <div class="op-card-footer"><span>16 مارچ 2026</span><a class="read-more">پڑھیں →</a></div>
+        </div>
+        <div class="op-card" onclick="showPage('article')">
+          <div class="op-card-top">
+            <div class="op-author-row">
+              <div class="op-avatar" style="background:linear-gradient(135deg,#0055cc,#00aaff);">نف</div>
+              <div><div class="op-name">نائلہ فاروق</div><div class="op-role">خارجہ امور کی ماہر</div></div>
+            </div>
+            <div class="op-title">پاکستان-چین تعلقات: CPEC 2.0 کا آغاز</div>
+          </div>
+          <div class="op-card-body"><p>سی پیک کے دوسرے مرحلے کے آغاز کے ساتھ پاکستان اور چین کے تعلقات ایک نئے موڑ پر آ گئے ہیں۔ یہ محض سڑکیں اور بندرگاہیں نہیں...</p></div>
+          <div class="op-card-footer"><span>15 مارچ 2026</span><a class="read-more">پڑھیں →</a></div>
+        </div>
+        <div class="op-card" onclick="showPage('article')">
+          <div class="op-card-top">
+            <div class="op-author-row">
+              <div class="op-avatar" style="background:linear-gradient(135deg,#006622,#00cc44);">ذا</div>
+              <div><div class="op-name">ذوالفقار احمد</div><div class="op-role">سیاسی تجزیہ نگار</div></div>
+            </div>
+            <div class="op-title">نوجوانوں کی سیاست میں واپسی — کیا تبدیلی آئے گی؟</div>
+          </div>
+          <div class="op-card-body"><p>پاکستان کی نوجوان نسل سیاست میں بڑھ چڑھ کر حصہ لے رہی ہے۔ یہ صرف ووٹرز نہیں بلکہ تبدیلی کے علمبردار ہیں جن کی آواز اب نظرانداز نہیں...</p></div>
+          <div class="op-card-footer"><span>14 مارچ 2026</span><a class="read-more">پڑھیں →</a></div>
+        </div>
+      </div>
+
+      <!-- MAGAZINE STRIP -->
+      <div class="sec-head">
+        <h2><span class="line"></span> خاص موضوعات</h2>
+      </div>
+      <div class="mag-row" style="margin-bottom:40px;">
+        <div class="mag-item" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1599930113854-d6d7fd521f10?w=400&q=80" alt="">
+          <div class="mag-num">01</div>
+          <div class="mag-overlay"><div class="pill pill-r" style="margin-bottom:6px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">سیاست</div><h3>انتخابات 2027 — سیاسی منظر نامہ</h3></div>
+        </div>
+        <div class="mag-item" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&q=80" alt="">
+          <div class="mag-num">02</div>
+          <div class="mag-overlay"><div class="pill pill-g" style="margin-bottom:6px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">ماحول</div><h3>موسمیاتی بحران — پاکستان کی تیاری</h3></div>
+        </div>
+        <div class="mag-item" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&q=80" alt="">
+          <div class="mag-num">03</div>
+          <div class="mag-overlay"><div class="pill pill-p" style="margin-bottom:6px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">ٹیک</div><h3>ڈیجیٹل پاکستان — 2030 تک کے اہداف</h3></div>
+        </div>
+        <div class="mag-item" onclick="showPage('article')">
+          <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80" alt="">
+          <div class="mag-num">04</div>
+          <div class="mag-overlay"><div class="pill pill-o" style="margin-bottom:6px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">کھیل</div><h3>پاکستان کھیل — اولمپکس 2028 کی تیاری</h3></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <!-- LIVE UPDATES -->
+      <div class="swidget">
+        <div class="swidget-head">🔴 لائیو اپڈیٹس <span class="badge">LIVE</span></div>
+        <div id="live-feed">
+          <div class="live-entry" onclick="showPage('article')">
+            <div class="live-time" style="color:var(--red);">10:45</div>
+            <div class="live-dot-line"><div class="live-circle"></div><div class="live-line"></div></div>
+            <div class="live-entry-body"><h4><span class="live-new">نیا</span>وزیر خزانہ کا اعلان — بجلی 15% سستی ہو گی</h4><p>اگلے ماہ سے نئے نرخ لاگو ہوں گے</p></div>
+          </div>
+          <div class="live-entry" onclick="showPage('article')">
+            <div class="live-time">10:22</div>
+            <div class="live-dot-line"><div class="live-circle old"></div><div class="live-line"></div></div>
+            <div class="live-entry-body"><h4>قومی اقتصادی کانفرنس شروع ہو گئی</h4><p>وزیر اعظم نے افتتاح کیا</p></div>
+          </div>
+          <div class="live-entry" onclick="showPage('article')">
+            <div class="live-time">09:55</div>
+            <div class="live-dot-line"><div class="live-circle old"></div><div class="live-line"></div></div>
+            <div class="live-entry-body"><h4>آئی ایم ایف کا مثبت بیان — پاکستان کی تعریف</h4><p>قرض پروگرام جاری رہے گا</p></div>
+          </div>
+          <div class="live-entry" onclick="showPage('article')">
+            <div class="live-time">09:30</div>
+            <div class="live-dot-line"><div class="live-circle old"></div></div>
+            <div class="live-entry-body"><h4>اسٹاک مارکیٹ 75,000 پوائنٹ سے اوپر کھلی</h4><p>سرمایہ کاروں میں خوشی کی لہر</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POLL -->
+      <div class="swidget">
+        <div class="swidget-head">🗳️ آج کا سوال</div>
+        <div style="padding:20px;">
+          <div class="poll-q">کیا نئی اقتصادی پالیسی سے مہنگائی کم ہو گی؟</div>
+          <div class="poll-options" id="poll">
+            <div class="poll-opt" onclick="vote(this, 45)">
+              <div class="poll-bar" style="width:45%"></div>
+              <span class="poll-opt-label">ہاں، ضرور کم ہو گی</span>
+              <span class="poll-pct">45%</span>
+            </div>
+            <div class="poll-opt" onclick="vote(this, 30)">
+              <div class="poll-bar" style="width:30%"></div>
+              <span class="poll-opt-label">نہیں، کوئی فرق نہیں</span>
+              <span class="poll-pct">30%</span>
+            </div>
+            <div class="poll-opt" onclick="vote(this, 25)">
+              <div class="poll-bar" style="width:25%"></div>
+              <span class="poll-opt-label">انتظار میں ہوں</span>
+              <span class="poll-pct">25%</span>
+            </div>
+          </div>
+          <div class="poll-total">کل ووٹ: 14,832 • آج کا سوال</div>
+        </div>
+      </div>
+
+      <!-- TRENDING -->
+      <div class="swidget">
+        <div class="swidget-head">🔥 ٹرینڈنگ <span class="badge">آج</span></div>
+        <ul class="trending-list">
+          <li class="trending-item" onclick="showPage('article')"><div class="t-num">1</div><div class="t-body"><h4>پی ایس ایل 2026 فائنل</h4><div class="meta">145k ریڈز</div></div></li>
+          <li class="trending-item" onclick="showPage('article')"><div class="t-num">2</div><div class="t-body"><h4>بجلی کی نئی قیمتیں</h4><div class="meta">98k ریڈز</div></div></li>
+          <li class="trending-item" onclick="showPage('article')"><div class="t-num">3</div><div class="t-body"><h4>5G سروس لانچ</h4><div class="meta">76k ریڈز</div></div></li>
+          <li class="trending-item" onclick="showPage('article')"><div class="t-num">4</div><div class="t-body"><h4>ڈالر کی قدر میں کمی</h4><div class="meta">62k ریڈز</div></div></li>
+          <li class="trending-item" onclick="showPage('article')"><div class="t-num">5</div><div class="t-body"><h4>بابر اعظم سنچری</h4><div class="meta">54k ریڈز</div></div></li>
+        </ul>
+      </div>
+
+      <!-- STOCKS -->
+      <div class="swidget">
+        <div class="swidget-head">📊 مارکیٹ اپڈیٹ</div>
+        <div class="stock-item"><span class="s-name">KSE-100</span><span class="s-val">75,240</span><span class="s-chg pos">▲ 1,420</span></div>
+        <div class="stock-item"><span class="s-name">USD/PKR</span><span class="s-val">277.50</span><span class="s-chg neg">▼ 2.30</span></div>
+        <div class="stock-item"><span class="s-name">سونا (تولہ)</span><span class="s-val">3,20,000</span><span class="s-chg pos">▲ 4,500</span></div>
+        <div class="stock-item"><span class="s-name">چاندی (تولہ)</span><span class="s-val">3,450</span><span class="s-chg pos">▲ 120</span></div>
+        <div class="stock-item"><span class="s-name">پیٹرول</span><span class="s-val">272.89</span><span class="s-chg neg">▼ 1.50</span></div>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter-widget">
+        <h3>📬 نیوز لیٹر</h3>
+        <p>ہر روز صبح تازہ ترین خبریں براہ راست آپ کے ای میل پر — بالکل مفت</p>
+        <input class="nl-input" type="text" placeholder="آپ کا نام...">
+        <input class="nl-input" type="email" placeholder="ای میل ایڈریس...">
+        <button class="nl-btn" onclick="this.textContent='✓ سبسکرائب ہو گئے!'">سبسکرائب کریں</button>
+      </div>
+
+    </aside>
+  </div>
+
+</div>
+</div>
+
+<!-- ████████████████ CATEGORIES PAGE ████████████████ -->
+<div id="page-categories" class="page">
+<div class="cat-page-wrap">
+  <div class="cat-banner">
+    <h1>تمام زمرے</h1>
+    <p>اپنی پسند کا موضوع منتخب کریں اور تازہ خبریں پڑھیں</p>
+  </div>
+  <div class="cat-tabs-wrap">
+    <div class="cat-tab active" onclick="switchCat('pk',this)">🇵🇰 پاکستان</div>
+    <div class="cat-tab" onclick="switchCat('world',this)">🌍 دنیا</div>
+    <div class="cat-tab" onclick="switchCat('biz',this)">📈 کاروبار</div>
+    <div class="cat-tab" onclick="switchCat('sports',this)">🏏 کھیل</div>
+    <div class="cat-tab" onclick="switchCat('tech',this)">💻 ٹیکنالوجی</div>
+    <div class="cat-tab" onclick="switchCat('health',this)">🏥 صحت</div>
+    <div class="cat-tab" onclick="switchCat('ent',this)">🎬 تفریح</div>
+    <div class="cat-tab" onclick="switchCat('opinion',this)">✍️ رائے</div>
+  </div>
+
+  <!-- Pakistan -->
+  <div id="cat-pk" class="cat-content active">
+    <div class="cat-hero-grid">
+      <div class="cat-hero-big" onclick="showPage('article')">
+        <img src="https://images.unsplash.com/photo-1599930113854-d6d7fd521f10?w=800&q=85" alt="">
+        <div class="cat-hero-big-overlay">
+          <div class="pill pill-r" style="margin-bottom:10px; border-radius:3px; display:inline-block; padding:2px 8px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:2px;">پاکستان</div>
+          <h2>قومی اسمبلی میں شہری حقوق کا تاریخی بل منظور — نئے دور کا آغاز</h2>
+          <p>پارلیمنٹ کے دونوں ایوانوں نے بل کی منظوری دے دی — صدر کی دستخط سے قانون بن جائے گا</p>
+        </div>
+      </div>
+      <div class="cat-side-cards">
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-r" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">لاہور</div><h3>لاہور ہائی کورٹ کا آلودگی کے خلاف سخت حکم</h3><p class="meta">2 گھنٹے قبل</p></div></div>
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-b" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">تعلیم</div><h3>میٹرک امتحانات میں 85 فیصد پاس ریٹ — نیا ریکارڈ</h3><p class="meta">5 گھنٹے قبل</p></div></div>
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-g" style="margin-bottom:4px; border-radius:3px; display:inline-block; padding:1px 7px; font-family:'IBM Plex Mono'; font-size:9px; letter-spacing:1px;">پانی</div><h3>پاکستان کے پانی کے بحران کا حل — نئی پالیسی</h3><p class="meta">8 گھنٹے قبل</p></div></div>
+      </div>
+    </div>
+    <div class="cat-news-grid">
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=500&q=80" alt=""><div class="ncard-time-badge">3 گھنٹے قبل</div></div><div class="ncard-body"><div class="pill pill-p" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">کراچی</div><h3>کراچی میں ٹرانسپورٹ نظام کی بہتری کا منصوبہ منظور</h3><p>20 ارب روپے کی لاگت سے نئے بس ریپڈ ٹرانزٹ روٹس بنیں گے</p></div><div class="ncard-footer"><span>سیاسی ڈیسک</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt=""><div class="ncard-time-badge">6 گھنٹے قبل</div></div><div class="ncard-body"><div class="pill pill-r" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">اسلام آباد</div><h3>وفاقی دارالحکومت میں نئے ہسپتال کا سنگ بنیاد رکھا گیا</h3><p>5 سو بستروں کا جدید ہسپتال 2028 تک مکمل ہو گا</p></div><div class="ncard-footer"><span>صحت ڈیسک</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&q=80" alt=""><div class="ncard-time-badge">9 گھنٹے قبل</div></div><div class="ncard-body"><div class="pill pill-gold" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">پشاور</div><h3>پشاور بی آر ٹی نے 5 لاکھ مسافر روزانہ کا ہدف حاصل کیا</h3><p>سروس شروع ہونے کے بعد پہلی بار اتنی تعداد میں سواری</p></div><div class="ncard-footer"><span>ٹرانسپورٹ ڈیسک</span></div></div>
+    </div>
+  </div>
+
+  <!-- World -->
+  <div id="cat-world" class="cat-content">
+    <div class="cat-hero-grid">
+      <div class="cat-hero-big" onclick="showPage('article')">
+        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=85" alt="">
+        <div class="cat-hero-big-overlay">
+          <div class="pill pill-b" style="margin-bottom:10px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">دنیا</div>
+          <h2>اقوام متحدہ میں فلسطین مسئلے پر ہنگامہ خیز اجلاس — امن مذاکرات کا مطالبہ</h2>
+          <p>50 سے زائد ممالک نے فوری جنگ بندی کی قرارداد پیش کی</p>
+        </div>
+      </div>
+      <div class="cat-side-cards">
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-b" style="margin-bottom:4px;border-radius:3px;display:inline-block;padding:1px 7px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;">امریکہ</div><h3>امریکی صدر کا دورہ ایشیا — پاکستان میں خوشگوار ردعمل</h3><p class="meta">4 گھنٹے قبل</p></div></div>
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-r" style="margin-bottom:4px;border-radius:3px;display:inline-block;padding:1px 7px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;">یورپ</div><h3>یوکرین تنازع — نئی امن کوشش کا آغاز</h3><p class="meta">7 گھنٹے قبل</p></div></div>
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-gold" style="margin-bottom:4px;border-radius:3px;display:inline-block;padding:1px 7px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;">خلیج</div><h3>سعودی عرب کا پاکستان میں 5 ارب ڈالر سرمایہ کاری کا اعلان</h3><p class="meta">10 گھنٹے قبل</p></div></div>
+      </div>
+    </div>
+    <div class="cat-news-grid">
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-p" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">چین</div><h3>چین کی AI پالیسی — دنیا کا ردعمل مختلف</h3><p>نئے ضوابط سے ٹیک کمپنیوں میں تشویش</p></div><div class="ncard-footer"><span>عالمی ڈیسک</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-g" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">بھارت</div><h3>بھارتی معیشت میں سست روی — ماہرین فکرمند</h3><p>GDP گروتھ 6 فیصد سے نیچے آ گئی</p></div><div class="ncard-footer"><span>معاشی ڈیسک</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-b" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">ماحول</div><h3>عالمی موسمیاتی تبدیلی کانفرنس — نئے وعدے</h3><p>80 ممالک نے کاربن اخراج کم کرنے کا عہد کیا</p></div><div class="ncard-footer"><span>ماحولیاتی ڈیسک</span></div></div>
+    </div>
+  </div>
+
+  <!-- Sports -->
+  <div id="cat-sports" class="cat-content">
+    <div class="cat-hero-grid">
+      <div class="cat-hero-big" onclick="showPage('article')">
+        <img src="https://images.unsplash.com/photo-1540747913346-19212a4b423d?w=800&q=85" alt="">
+        <div class="cat-hero-big-overlay">
+          <div class="pill pill-o" style="margin-bottom:10px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">کرکٹ</div>
+          <h2>بابر اعظم کی ناقابل یقین سنچری — پاکستان نے تیسرا ون ڈے 85 رنز سے جیتا</h2>
+          <p>بابر اعظم نے 98 گیندوں پر 121 رنز کی شاندار اننگز کھیلی</p>
+        </div>
+      </div>
+      <div class="cat-side-cards">
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-o" style="margin-bottom:4px;border-radius:3px;display:inline-block;padding:1px 7px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;">پی ایس ایل</div><h3>لاہور قلندرز فائنل میں — ملتان سلطانز کو ہرایا</h3><p class="meta">1 گھنٹہ قبل</p></div></div>
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-b" style="margin-bottom:4px;border-radius:3px;display:inline-block;padding:1px 7px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;">اولمپکس</div><h3>پاکستان کی اولمپکس 2028 تیاری شروع</h3><p class="meta">3 گھنٹے قبل</p></div></div>
+        <div class="cat-side-card" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&q=80" alt=""><div class="cat-side-card-body"><div class="pill pill-g" style="margin-bottom:4px;border-radius:3px;display:inline-block;padding:1px 7px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;">اسکواش</div><h3>پاکستانی اسکواش کھلاڑی عالمی چیمپئن بن گئے</h3><p class="meta">5 گھنٹے قبل</p></div></div>
+      </div>
+    </div>
+    <div class="cat-news-grid">
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=500&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-o" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">فٹبال</div><h3>پاکستان فٹبال فیڈریشن کا جرمن کوچ کے ساتھ معاہدہ</h3><p>قومی ٹیم کی تعمیر نو کا آغاز ہو گا</p></div><div class="ncard-footer"><span>کھیل ڈیسک</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-b" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">کھیل</div><h3>نوجوانوں میں کھیلوں کا رجحان 40 فیصد بڑھ گیا — رپورٹ</h3><p>اسپورٹس کلبوں کی تعداد میں اضافہ</p></div><div class="ncard-footer"><span>کھیل ڈیسک</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-g" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">ہاکی</div><h3>قومی ہاکی ٹیم کا نیا کوچنگ اسٹاف مقرر — اصلاحات کا آغاز</h3><p>ہالینڈ کے تجربہ کار کوچ کا تقرر</p></div><div class="ncard-footer"><span>کھیل ڈیسک</span></div></div>
+    </div>
+  </div>
+
+  <div id="cat-biz" class="cat-content">
+    <div style="text-align:center;padding:80px 0;color:var(--muted);">
+      <div style="font-size:56px;margin-bottom:16px;">📈</div>
+      <h2 style="font-family:'Bebas Neue';font-size:32px;letter-spacing:3px;margin-bottom:8px;color:var(--text);">کاروبار و معیشت</h2>
+      <p style="font-size:14px;">تازہ ترین کاروباری خبریں، اسٹاک مارکیٹ اپڈیٹس اور معاشی تجزیے</p>
+      <button onclick="showPage('home')" style="margin-top:20px;background:var(--red);color:#fff;border:none;padding:12px 28px;font-family:'Bebas Neue';font-size:16px;letter-spacing:2px;cursor:pointer;border-radius:4px;">ہوم پر واپس جائیں</button>
+    </div>
+  </div>
+  <div id="cat-tech" class="cat-content">
+    <div style="text-align:center;padding:80px 0;color:var(--muted);">
+      <div style="font-size:56px;margin-bottom:16px;">💻</div>
+      <h2 style="font-family:'Bebas Neue';font-size:32px;letter-spacing:3px;margin-bottom:8px;color:var(--text);">ٹیکنالوجی</h2>
+      <p>AI، 5G، اسٹارٹ اپس اور ڈیجیٹل پاکستان کی تازہ خبریں</p>
+    </div>
+  </div>
+  <div id="cat-health" class="cat-content">
+    <div style="text-align:center;padding:80px 0;color:var(--muted);">
+      <div style="font-size:56px;margin-bottom:16px;">🏥</div>
+      <h2 style="font-family:'Bebas Neue';font-size:32px;letter-spacing:3px;margin-bottom:8px;color:var(--text);">صحت</h2>
+      <p>طب، ادویات اور عوامی صحت سے متعلق تازہ خبریں اور مشورے</p>
+    </div>
+  </div>
+  <div id="cat-ent" class="cat-content">
+    <div style="text-align:center;padding:80px 0;color:var(--muted);">
+      <div style="font-size:56px;margin-bottom:16px;">🎬</div>
+      <h2 style="font-family:'Bebas Neue';font-size:32px;letter-spacing:3px;margin-bottom:8px;color:var(--text);">تفریح</h2>
+      <p>فلم، موسیقی، ڈرامہ اور شوبز کی دنیا سے تازہ ترین</p>
+    </div>
+  </div>
+  <div id="cat-opinion" class="cat-content">
+    <div style="text-align:center;padding:80px 0;color:var(--muted);">
+      <div style="font-size:56px;margin-bottom:16px;">✍️</div>
+      <h2 style="font-family:'Bebas Neue';font-size:32px;letter-spacing:3px;margin-bottom:8px;color:var(--text);">رائے و تجزیہ</h2>
+      <p>پاکستان کے مشہور کالم نگاروں اور تجزیہ نگاروں کی آراء</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ████████████████ ARTICLE PAGE ████████████████ -->
+<div id="page-article" class="page">
+<div class="art-wrap">
+<div class="art-grid">
+  <main>
+    <div class="art-breadcrumb">
+      <a onclick="showPage('home')">ہوم</a>
+      <span class="arrow">›</span>
+      <span>پاکستان</span>
+      <span class="arrow">›</span>
+      <span>معیشت</span>
+    </div>
+    <div class="art-main-cat">معیشت • پاکستان</div>
+    <h1 class="art-title">وزیر اعظم نے تاریخی قومی اقتصادی پالیسی 2026 کا اعلان کر دیا — آئندہ دو سال میں بیس لاکھ روزگار</h1>
+    <p class="art-subtitle">حکومت نے آئندہ مالی سال کے لیے جامع معاشی منصوبہ پیش کیا جس میں بنیادی اشیاء پر سبسڈی، بجلی کی قیمتوں میں کمی اور نوجوانوں کے لیے بے مثال روزگار پیکج شامل ہے</p>
+
+    <div class="art-meta">
+      <div class="art-author">
+        <div class="art-avatar">ا خ</div>
+        <div>
+          <div class="art-author-name">احمد خان</div>
+          <div class="art-author-role">سینئر رپورٹر — اقتصادی امور</div>
+        </div>
+      </div>
+      <div class="art-date">16 مارچ 2026، صبح 10:30</div>
+      <div class="art-read-time">⏱ 8 منٹ مطالعہ</div>
+      <div class="art-share">
+        <div class="share-btn">📘</div>
+        <div class="share-btn">🐦</div>
+        <div class="share-btn">💬</div>
+        <div class="share-btn">🔗</div>
+        <div class="share-btn">🖨️</div>
+      </div>
+    </div>
+
+    <img class="art-hero-img" src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&q=85" alt="قومی اقتصادی کانفرنس">
+    <p class="img-caption">وزیر اعظم اسلام آباد میں قومی اقتصادی کانفرنس 2026 سے خطاب کر رہے ہیں | فوٹو: خبرنیوز / محمد اعجاز</p>
+
+    <div class="art-body">
+      <p>اسلام آباد کے کنونشن سینٹر میں منعقد قومی اقتصادی کانفرنس سے خطاب کرتے ہوئے وزیر اعظم نے اعلان کیا کہ حکومت نے آئندہ دو سال کے لیے پاکستانی تاریخ کی سب سے جامع اقتصادی پالیسی تیار کی ہے جس کا مقصد عوام کی مشکلات کو ہنگامی بنیادوں پر حل کرنا اور ملک کو خودانحصاری کی طرف لے جانا ہے۔</p>
+
+      <p>نئی پالیسی کے تحت گندم، چینی، آٹا، خوردنی تیل اور دالوں سمیت 25 بنیادی اشیائے خوردونوش پر حکومتی سبسڈی دی جائے گی۔ وزیر اعظم نے بتایا کہ اس منصوبے پر 500 ارب روپے خرچ کیے جائیں گے جس سے دو کروڑ سے زائد خاندانوں کو براہ راست فائدہ پہنچے گا۔ یہ رقم بے نظیر انکم سپورٹ پروگرام کے ذریعے یکدم منتقل کی جائے گی۔</p>
+
+      <div class="pull-quote">
+        ہماری حکومت کا ایک ہی عہد ہے — کوئی بھوکا نہ سوئے، کوئی بچہ اسکول سے محروم نہ رہے اور ہر نوجوان کو روزگار ملے۔ یہ محض الفاظ نہیں، یہ ہمارا قومی فرض ہے۔
+      </div>
+
+      <h3>توانائی میں انقلابی اصلاحات</h3>
+
+      <p>معاشی منصوبے کے پہلے مرحلے میں توانائی کے شعبے میں اصلاحات لائی جائیں گی۔ بجلی کی قیمتوں میں فوری 15 فیصد کمی کا اعلان کیا گیا ہے جبکہ صنعتی صارفین کے لیے یہ کمی 20 فیصد تک ہو گی۔ اس سے ملکی صنعتوں کی پیداواری لاگت میں نمایاں کمی آنے کی توقع ہے جو بالآخر عوام تک سستی اشیاء کی صورت میں پہنچے گی۔ وزیر توانائی نے کہا کہ نجی بجلی کمپنیوں کے ساتھ نئے معاہدے طے پا گئے ہیں۔</p>
+
+      <p>وزیر خزانہ نے بتایا کہ آئی ایم ایف اور ورلڈ بینک دونوں نے اس پالیسی کو سراہا ہے اور اگلے تین سال کے لیے آٹھ ارب ڈالر کے قرضوں کی یقین دہانی کرائی گئی ہے۔ انہوں نے کہا کہ یہ رقم بنیادی ڈھانچے، توانائی اور ڈیجیٹل ٹیکنالوجی کے منصوبوں میں لگائی جائے گی جبکہ خسارے کو کم کرنے کے اہداف بھی مقرر کیے گئے ہیں۔</p>
+
+      <h3>روزگار کا بڑا منصوبہ</h3>
+
+      <p>حکومت نے اگلے دو سال میں بیس لاکھ نئی ملازمتیں پیدا کرنے کا ہدف مقرر کیا ہے۔ اس مقصد کے لیے آئی ٹی پارکس، اسپیشل اکنامک زونز اور چھوٹے کاروبار کو بلاسود قرضے دینے کا منصوبہ بنایا گیا ہے۔ خصوصی طور پر نوجوانوں اور خواتین کے لیے کاروباری تربیت کے مراکز قائم کیے جائیں گے جہاں ڈیجیٹل ہنر سکھائے جائیں گے۔</p>
+
+      <p>اقتصادی ماہرین نے اس منصوبے کو عمومی طور پر مثبت قرار دیا ہے تاہم انہوں نے تنبیہ کی ہے کہ اصل چیلنج ان وعدوں پر عملدرآمد ہے۔ ڈاکٹر عائشہ رضا نے کہا کہ پچھلے سالوں میں بھی ایسے منصوبے آئے لیکن انتظامی کمزوریوں کی وجہ سے نتائج مطلوبہ سطح پر نہ آ سکے۔ تاہم حکومتی ترجمان نے یقین دلایا کہ اس بار نگرانی کا مضبوط نظام قائم کیا گیا ہے۔</p>
+
+      <p>کاروباری برادری نے پالیسی کا خیرمقدم کیا ہے — فیڈریشن آف پاکستان چیمبرز آف کامرس کے صدر نے کہا کہ یہ وہ پالیسی ہے جس کا کاروباری حضرات کئی سالوں سے انتظار کر رہے تھے۔ خاص طور پر ٹیکس اصلاحات اور توانائی کی سستی قیمتوں نے صنعتکاروں میں نئی امید پیدا کی ہے۔</p>
+    </div>
+
+    <div class="art-tags">
+      <span class="tags-lbl">ٹیگز:</span>
+      <span class="tag">وزیر اعظم</span>
+      <span class="tag">معیشت</span>
+      <span class="tag">پاکستان</span>
+      <span class="tag">مہنگائی</span>
+      <span class="tag">بجٹ</span>
+      <span class="tag">سبسڈی</span>
+      <span class="tag">روزگار</span>
+    </div>
+
+    <!-- RELATED -->
+    <div class="sec-head" style="margin-top:40px;">
+      <h2><span class="line"></span> متعلقہ خبریں</h2>
+    </div>
+    <div class="news-grid-3">
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-g" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">مارکیٹ</div><h3>اسٹیٹ بینک نے شرح سود میں کمی کا اعلان کیا</h3></div><div class="ncard-footer"><span>5 گھنٹے قبل</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-b" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">IMF</div><h3>آئی ایم ایف کی نئی قسط پاکستان کو مل گئی</h3></div><div class="ncard-footer"><span>8 گھنٹے قبل</span></div></div>
+      <div class="ncard" onclick="showPage('article')"><div class="ncard-img-wrap"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80" alt=""></div><div class="ncard-body"><div class="pill pill-r" style="margin-bottom:8px;border-radius:3px;display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:2px;">کرنسی</div><h3>ڈالر کے مقابلے روپیہ تاریخی مضبوطی پر</h3></div><div class="ncard-footer"><span>10 گھنٹے قبل</span></div></div>
+    </div>
+  </main>
+
+  <!-- ARTICLE SIDEBAR -->
+  <aside class="art-sidebar">
+    <div class="newsletter-widget" style="border-radius:6px;">
+      <h3>📬 نیوز لیٹر</h3>
+      <p>روزانہ تازہ خبریں آپ کے ای میل پر</p>
+      <input class="nl-input" type="email" placeholder="ای میل ایڈریس...">
+      <button class="nl-btn" onclick="this.textContent='✓ شکریہ!'">سبسکرائب</button>
+    </div>
+
+    <div class="swidget">
+      <div class="swidget-head">🔥 ٹرینڈنگ</div>
+      <ul class="trending-list">
+        <li class="trending-item" onclick="showPage('article')"><div class="t-num">1</div><div class="t-body"><h4>پی ایس ایل 2026 فائنل — آج شام</h4><div class="meta">145k ریڈز</div></div></li>
+        <li class="trending-item" onclick="showPage('article')"><div class="t-num">2</div><div class="t-body"><h4>5G لانچ — کس کس شہر میں</h4><div class="meta">98k ریڈز</div></div></li>
+        <li class="trending-item" onclick="showPage('article')"><div class="t-num">3</div><div class="t-body"><h4>بجلی کی نئی قیمتیں</h4><div class="meta">76k ریڈز</div></div></li>
+        <li class="trending-item" onclick="showPage('article')"><div class="t-num">4</div><div class="t-body"><h4>ڈالر کی قدر میں کمی</h4><div class="meta">62k ریڈز</div></div></li>
+      </ul>
+    </div>
+
+    <div class="swidget">
+      <div class="swidget-head">📰 تازہ خبریں</div>
+      <div class="sw-news-item" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&q=80" alt=""><div><h4>لاہور میٹرو گرین لائن کا افتتاح</h4><div class="meta">1 گھنٹہ قبل</div></div></div>
+      <div class="sw-news-item" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=200&q=80" alt=""><div><h4>5G — پاکستان کا نیا ڈیجیٹل دور</h4><div class="meta">3 گھنٹے قبل</div></div></div>
+      <div class="sw-news-item" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1540747913346-19212a4b423d?w=200&q=80" alt=""><div><h4>پاکستان کرکٹ سیریز میں 3-0 سے جیت</h4><div class="meta">5 گھنٹے قبل</div></div></div>
+      <div class="sw-news-item" onclick="showPage('article')"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=80" alt=""><div><h4>ڈینگی ویکسین جلد دستیاب ہو گی</h4><div class="meta">7 گھنٹے قبل</div></div></div>
+    </div>
+
+    <div class="swidget">
+      <div class="swidget-head">📊 مارکیٹ</div>
+      <div class="stock-item"><span class="s-name">KSE-100</span><span class="s-val">75,240</span><span class="s-chg pos">▲ 1.9%</span></div>
+      <div class="stock-item"><span class="s-name">USD/PKR</span><span class="s-val">277.50</span><span class="s-chg neg">▼ 0.8%</span></div>
+      <div class="stock-item"><span class="s-name">سونا</span><span class="s-val">3,20,000</span><span class="s-chg pos">▲ 1.4%</span></div>
+      <div class="stock-item"><span class="s-name">پیٹرول</span><span class="s-val">272.89</span><span class="s-chg neg">▼ 0.5%</span></div>
+    </div>
+  </aside>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo-text">خبر<em>نیوز</em></div>
+      <p>پاکستان کا معتبر ترین اردو نیوز پلیٹ فارم — چوبیس گھنٹے، ساتوں دن، درست اور تازہ خبریں۔</p>
+      <div class="footer-social">
+        <div class="fsoc">📘</div>
+        <div class="fsoc">🐦</div>
+        <div class="fsoc">📷</div>
+        <div class="fsoc">▶️</div>
+        <div class="fsoc">💬</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>خبریں</h4>
+      <ul>
+        <li><a>پاکستان</a></li>
+        <li><a>دنیا</a></li>
+        <li><a>سیاست</a></li>
+        <li><a>کاروبار</a></li>
+        <li><a>کھیل</a></li>
+        <li><a>ٹیکنالوجی</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>خدمات</h4>
+      <ul>
+        <li><a>لائیو ٹی وی</a></li>
+        <li><a>پوڈکاسٹ</a></li>
+        <li><a>ویڈیو</a></li>
+        <li><a>فوٹو گیلری</a></li>
+        <li><a>نیوز لیٹر</a></li>
+        <li><a>موبائل ایپ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>کمپنی</h4>
+      <ul>
+        <li><a>ہمارے بارے میں</a></li>
+        <li><a>رابطہ کریں</a></li>
+        <li><a>اشتہار</a></li>
+        <li><a>کیریئر</a></li>
+        <li><a>رازداری</a></li>
+        <li><a>شرائط</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>موسم</h4>
+      <ul>
+        <li><a>☀️ لاہور: 24°C</a></li>
+        <li><a>🌤 کراچی: 29°C</a></li>
+        <li><a>⛅ اسلام آباد: 19°C</a></li>
+        <li><a>🌥 پشاور: 17°C</a></li>
+        <li><a>❄️ مری: 8°C</a></li>
+        <li><a>🌨 سکردو: 2°C</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 خبرنیوز — تمام حقوق محفوظ</span>
+    <span>خبرنیوز ڈیجیٹل میڈیا گروپ، اسلام آباد، پاکستان</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
